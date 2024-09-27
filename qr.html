@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uygulama Yönlendirmesi</title>
+    <script>
+        window.onload = function() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            // iOS kontrolü
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                window.location.href = "https://apps.apple.com/tr/app/ego-cepte/id501322549?l=tr&platform=iphone";
+            }
+            // Android kontrolü
+            else if (/android/i.test(userAgent)) {
+                window.location.href = "https://play.google.com/store/apps/details?id=com.ego.android&hl=tr";
+            }
+            // Diğer platformlar için isteğe bağlı bir sayfa
+            else {
+                document.body.innerHTML = "Uygulama sadece iOS ve Android cihazlar için mevcuttur.";
+            }
+        };
+    </script>
+</head>
+<body>
+</body>
+</html>
